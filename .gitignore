@@ -1,0 +1,11 @@
+# JetBrains IDEs configuration directory
+.idea/
+
+#VSCode configuration directory
+.vscode/
+
+# Ignore sourcemap files for CSS
+*.css.map
+
+# Commonly ignored directories for Node and PHP development
+node_modules/
