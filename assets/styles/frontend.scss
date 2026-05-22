@@ -1,40 +1,142 @@
 .weather-posts-block {
   font-family: 'Archivo', sans-serif;
-  //font-family: inherit;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   .container-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
+    align-items: start;
     width: 100%;
-
-    .big-post {
-      grid-column: 1 / span 3;
-    }
-
-    .small-posts {
-      grid-column: 4 / span 1;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
   }
 
-  h2 {
+  .big-post {
+    grid-column: 1 / span 3;
+  }
+
+  .small-posts {
+    grid-column: 4 / span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  h3 {
     font-weight: 600;
     font-size: 34px;
     line-height: 120%;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .post-card {
+
+    &.big-post {
+      h2 {
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 120%;
+      }
+    }
+
+    &.small-post {
+      h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+      }
+    }
+
+    &__thumbnail {
+      a {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    &__category {
+      font-family: 'Archivo Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #537A50;
+    }
+
     &__excerpt {
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+
       font-weight: 400;
       font-size: 14px;
       line-height: 140%;
+      color: #333;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container-grid {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+    .big-post {
+      grid-column: 1 / -1;
+    }
+
+    .small-posts {
+      grid-column: 1 / -1;
+      flex-direction: row;
+
+      .post-card {
+        flex: 1;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-grid {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+
+    .small-posts {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    h3,
+    .post-card.big-post h2 {
+      font-size: 24px;
+      line-height: 130%;
+    }
+
+    .post-card.small-post h3 {
+      font-size: 18px;
     }
   }
 }

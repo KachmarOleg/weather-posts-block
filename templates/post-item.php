@@ -1,17 +1,18 @@
 <?php
 $post_id = ! empty( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
-$big     = get_post( $post_id );
+$post_class = ! empty( $args['class'] ) ? $args['class'] : '';
+$big = get_post( $post_id );
 
-$permalink  = get_permalink( $big );
-$title      = esc_html( $big->post_title );
-$excerpt    = wp_trim_words( $big->post_excerpt ?: $big->post_content, 30 );
+$permalink = get_permalink( $big );
+$title = esc_html( $big->post_title );
+$excerpt = wp_trim_words( $big->post_excerpt ?: $big->post_content, 30 );
 
-$categories   = get_the_category( $big->ID );
-$cat_names    = ! empty( $categories ) ? wp_list_pluck( $categories, 'name' ) : [];
+$categories = get_the_category( $big->ID );
+$cat_names = ! empty( $categories ) ? wp_list_pluck( $categories, 'name' ) : [];
 ?>
 
 
-<article class="post-card post-card--featured">
+<article class="post-card post-card--featured<?php echo ' ' . esc_html($post_class); ?>">
     <?php if ( has_post_thumbnail( $big ) ) : ?>
         <div class="post-card__thumbnail">
             <a href="<?php echo esc_url( $permalink ); ?>" tabindex="-1" aria-hidden="true">
@@ -29,11 +30,11 @@ $cat_names    = ! empty( $categories ) ? wp_list_pluck( $categories, 'name' ) : 
             </div>
         <?php endif; ?>
 
-        <h2 class="post-card__title">
+        <h3 class="post-card__title">
             <a class="post-card__link" href="<?php echo esc_url( $permalink ); ?>">
                 <?php echo $title; ?>
             </a>
-        </h2>
+        </h3>
 
         <p class="post-card__excerpt"><?php echo $excerpt; ?></p>
     </div>

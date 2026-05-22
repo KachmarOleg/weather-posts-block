@@ -12,18 +12,18 @@ function weather_posts_block_render( $attributes ): string
 
     <div class="weather-posts-block">
         <div class="container-grid">
-            <?php $args = [ 'post_id' => $big_id ];
+            <?php $args = [ 'post_id' => $big_id, 'class' => 'big-post' ];
             if ( file_exists( $plugin_dir_path ) ) {
                 include $plugin_dir_path . '../templates/post-item.php';
             } ?>
 
             <div class="small-posts">
-                <?php $args = [ 'post_id' => $small1_id ];
+                <?php $args = [ 'post_id' => $small1_id, 'class' => 'small-post' ];
                 if ( file_exists( $plugin_dir_path ) ) {
                     include $plugin_dir_path . '../templates/post-item.php';
                 } ?>
 
-                <?php $args = [ 'post_id' => $small2_id ];
+                <?php $args = [ 'post_id' => $small2_id, 'class' => 'small-post' ];
                 if ( file_exists( $plugin_dir_path ) ) {
                     include $plugin_dir_path . '../templates/post-item.php';
                 } ?>

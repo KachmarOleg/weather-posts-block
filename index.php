@@ -16,7 +16,7 @@ function weather_posts_block_register(): void
 {
     wp_enqueue_style(
             'weather-posts-block-fonts',
-            'https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap',
+            'https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap',
             [],
             null
     );
