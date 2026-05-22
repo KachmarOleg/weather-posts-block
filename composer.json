@@ -1,0 +1,13 @@
+{
+  "name": "your-name/weather-posts-block",
+  "description": "Gutenberg block for weather and posts",
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "WeatherPostsBlock\\": "includes/"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "custom/weather-posts-block",
+  "title": "Weather Posts",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Gutenberg block that displays posts and weather",
+  "attributes": {
+    "bigPostId": { "type": "number", "default": 0 },
+    "smallPost1Id": { "type": "number", "default": 0 },
+    "smallPost2Id": { "type": "number", "default": 0 }
+  },
+  "editorScript": "file:./build/index.js",
+  "style": "file:./assets/styles/frontend.css"
+}
