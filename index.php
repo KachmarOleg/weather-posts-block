@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once __DIR__ . '/includes/render.php';
 require_once __DIR__ . '/includes/settings.php';
 require_once __DIR__ . '/includes/ajax.php';
+require_once __DIR__ . '/includes/cli.php';
 
 function weather_posts_block_register(): void {
     // Fonts
