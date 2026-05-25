@@ -5,7 +5,7 @@ import { Fragment } from '@wordpress/element';
 
 export default function Edit({ attributes, setAttributes }) {
     const {
-        bigPostId, smallPost1Id, smallPost2Id,
+        smallPost1Id, smallPost2Id,
         showLocation, showTemperature, showFeelsLike,
         showCondition, showHumidity, showPressure,
         showWindSpeed, showSunrise, showSunset,
@@ -35,12 +35,6 @@ export default function Edit({ attributes, setAttributes }) {
             <InspectorControls>
                 <PanelBody title="Select Posts" initialOpen={true}>
                     <SelectControl
-                        label="Big Post"
-                        value={bigPostId}
-                        options={options}
-                        onChange={(value) => setAttributes({ bigPostId: parseInt(value) })}
-                    />
-                    <SelectControl
                         label="Small Post 1"
                         value={smallPost1Id}
                         options={options}
@@ -69,7 +63,6 @@ export default function Edit({ attributes, setAttributes }) {
 
             <div {...blockProps}>
                 <h3>Weather Posts Block</h3>
-                <p>Big Post ID: {bigPostId || 'not selected'}</p>
                 <p>Small Post 1 ID: {smallPost1Id || 'not selected'}</p>
                 <p>Small Post 2 ID: {smallPost2Id || 'not selected'}</p>
                 <p><em>Weather snippet loads on frontend</em></p>
