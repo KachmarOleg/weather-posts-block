@@ -22,7 +22,7 @@ function weather_posts_block_register(): void
     );
 
     register_block_type(__DIR__, [
-            'render_callback' => 'weather_posts_block_render',
+        'render_callback' => 'weather_posts_block_render',
     ]);
 }
 
