@@ -6,24 +6,26 @@
  * Author: Oleh Kachmar
  */
 
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
 require_once __DIR__ . '/includes/render.php';
+require_once __DIR__ . '/includes/settings.php';
+require_once __DIR__ . '/includes/ajax.php';
 
-function weather_posts_block_register(): void
-{
+function weather_posts_block_register(): void {
+    // Fonts
     wp_enqueue_style(
-            'weather-posts-block-fonts',
-            'https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap',
-            [],
-            null
+        'weather-posts-block-fonts',
+        'https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap',
+        [],
+        null
     );
 
-    register_block_type(__DIR__, [
+    register_block_type( __DIR__, [
         'render_callback' => 'weather_posts_block_render',
-    ]);
+    ] );
 }
 
-add_action('init', 'weather_posts_block_register');
+add_action( 'init', 'weather_posts_block_register' );

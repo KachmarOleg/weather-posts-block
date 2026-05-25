@@ -6,8 +6,18 @@
   "icon": "smiley",
   "description": "Gutenberg block that displays posts and weather",
   "attributes": {
+    "bigPostId": { "type": "number", "default": 0 },
     "smallPost1Id": { "type": "number", "default": 0 },
-    "smallPost2Id": { "type": "number", "default": 0 }
+    "smallPost2Id": { "type": "number", "default": 0 },
+    "showLocation":    { "type": "boolean", "default": true },
+    "showTemperature": { "type": "boolean", "default": true },
+    "showFeelsLike":   { "type": "boolean", "default": true },
+    "showCondition":   { "type": "boolean", "default": true },
+    "showHumidity":    { "type": "boolean", "default": true },
+    "showPressure":    { "type": "boolean", "default": false },
+    "showWindSpeed":   { "type": "boolean", "default": true },
+    "showSunrise":     { "type": "boolean", "default": false },
+    "showSunset":      { "type": "boolean", "default": false }
   },
   "editorScript": "file:./build/index.js",
   "style": "file:./assets/styles/frontend.css"
