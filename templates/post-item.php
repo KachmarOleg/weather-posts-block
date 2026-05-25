@@ -31,7 +31,7 @@ $cat_names = ! empty( $categories ) ? wp_list_pluck( $categories, 'name' ) : [];
         <?php endif; ?>
 
         <h3 class="post-card__title">
-            <a class="post-card__link" href="<?php echo esc_url( $permalink ); ?>">
+            <a class="post-card__link" href="<?php echo esc_url( $permalink ); ?>" aria-label="Read more about <?php echo $title; ?>">
                 <?php echo $title; ?>
             </a>
         </h3>
